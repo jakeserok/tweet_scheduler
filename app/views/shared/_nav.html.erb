@@ -13,6 +13,25 @@
           <%= link_to "About", about_path, class: "nav-link"%>
         </li>
       </ul>
+
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <% if Current.user %>
+          <li class="nav-item">
+            <%= link_to Current.user.email, edit_password_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= button_to "Logout", logout_path, method: :delete , class: "btn btn-primary" %>
+          </li>
+          <% else %>
+          <li class="nav-item">
+            <%= link_to "Sign Up", sign_up_path, class: "btn btn-primary" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Log In", sign_in_path, class: "btn btn-primary" %>
+          </li>
+          <% end %>
+        </li>
+      </ul>
     </div>
   </div>
 </nav>
