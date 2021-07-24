@@ -6,5 +6,12 @@
 </div>
 
 <% @twitter_accounts.each do |t| %>
-  <span>Username: <%= t.username %></span>
+  <div class="d-flex align-items-center mb-4">
+    <div class="me-4">
+      <%= image_tag t.image, class: "rounded-circle" %>
+      <%= link_to "@#{t.username}", "https://twitter.com/#{t.username}", target: :_blank %>
+    </div>
+
+    <%= button_to "Disconnect", t, method: :delete, data: {  confirm: "Are you sure?" } %>
+  </div>
 <% end %>
