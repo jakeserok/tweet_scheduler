@@ -23,4 +23,20 @@ class Tweet < ApplicationRecord
     tweet = twitter_account.client.update(body)
     update(tweet_id: tweet.id)
   end
+
+  def self.user 
+    self.user.email
+  end
+
+  def self.to_csv
+    attributes = %w{ user_id twitter_account_id body publish_at tweet_id }
+
+    CSV.generate(headers: true) do |csv|
+      csv << attributes
+
+      all.each do |tweet|
+        csv << attributes.map{ |attr| tweet.send(attr) }
+      end
+    end
+  end
 end

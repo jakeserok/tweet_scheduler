@@ -4,6 +4,11 @@ class TweetsController < ApplicationController
 
   def index
     @tweets = Current.user.tweets
+
+    respond_to do |format|
+      format.html
+      format.csv { send_data @tweets.to_csv, filename: "tweets-#{Date.today}.csv" }
+    end
   end
 
   def new
