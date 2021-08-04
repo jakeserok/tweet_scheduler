@@ -35,7 +35,13 @@ class Tweet < ApplicationRecord
       csv << attributes
 
       all.each do |tweet|
-        csv << attributes.map{ |attr| tweet.send(attr) }
+        csv << [ # attributes.map{ |attr| tweet.send(attr) }
+          tweet.user.email,
+          "@" + tweet.twitter_account.username,
+          tweet.body,
+          tweet.publish_at,
+          tweet.tweet_id? ? "Published" : "Unpublished"
+        ]
       end
     end
   end
