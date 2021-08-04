@@ -236,6 +236,7 @@ GEM
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
+    wkhtmltopdf-binary (0.12.6.5)
     zeitwerk (2.4.2)
 
 PLATFORMS
@@ -261,6 +262,7 @@ DEPENDENCIES
   tzinfo-data
   web-console (>= 4.1.0)
   webpacker (~> 5.0)
+  wkhtmltopdf-binary (~> 0.12.6)
 
 RUBY VERSION
    ruby 3.0.1p64
