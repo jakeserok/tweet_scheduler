@@ -11,7 +11,7 @@ class OmniauthCallbacksController < ApplicationController
       secret: auth.credentials.secret
     )
 
-    redirect_to twitter_accounts_path, notice: "Successfully connected to Twitter"
+    redirect_to twitter_accounts_path, notice: 'Successfully connected to Twitter'
   end
 
   def auth
