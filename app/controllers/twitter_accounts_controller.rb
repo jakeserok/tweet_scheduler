@@ -4,6 +4,11 @@ class TwitterAccountsController < ApplicationController
 
   def index
     @twitter_accounts = Current.user.twitter_accounts
+
+    respond_to do |format|
+      format.html
+      format.csv { send_data @twitter_accounts.to_csv, filename: "tweets-#{Date.today}.csv" }
+    end
   end
 
   def destroy

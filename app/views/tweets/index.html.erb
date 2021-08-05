@@ -11,3 +11,7 @@
 <% end %>
 
 <%= render @tweets %>
+
+<div class="d-flex justify-content-around align-items-center">
+  <%= link_to "Generate CSV", "/tweets.csv", class: "btn btn-primary" %>
+</div>
