@@ -54,3 +54,5 @@ gem "omniauth-rails_csrf_protection", "~> 1.0"
 gem "twitter", "~> 7.0"
 
 gem "wkhtmltopdf-binary", "~> 0.12.6"
+
+gem "wicked_pdf", "~> 2.1"
