@@ -55,9 +55,9 @@ gem 'twitter', '~> 7.0'
 
 gem 'better_errors', '~> 2.9'
 
-gem "twitter", "~> 7.0"
-
 gem "wkhtmltopdf-binary", "~> 0.12.6"
 
 gem "wicked_pdf", "~> 2.1"
 gem 'rubocop', '~> 1.18'
+
+gem "rename", "~> 1.0"
